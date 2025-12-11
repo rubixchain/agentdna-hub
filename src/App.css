@@ -53,15 +53,27 @@ body::before {
   z-index: 1;
   padding: 0 clamp(16px, 6vw, 48px) 42px;
   flex: 1; /* pushes footer down */
-
 }
 
+.tutorial-intro {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+.tutorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px clamp(8, 4vw, 10px);
-  margin: 0 calc(-1 * clamp(8px, 6vw, 20px)) 10px;
+  margin: 0 calc(-1 * clamp(8px, 6vw, 48px)) 10px;
   width: calc(100% + 2 * clamp(16px, 6vw, 48px));
   border: 0;
   border-bottom: 1px solid var(--border);
