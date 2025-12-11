@@ -11,7 +11,7 @@ const cards = [
   {
     title: 'AgentDNA Dashboard',
     description: 'Manage agents, policies, and contexts.',
-    href: '#dashboard',
+    href: 'https://dashboard.agentdna.io/',
   },
   {
     title: 'Examples',
