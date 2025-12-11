@@ -31,18 +31,18 @@ function CodeSnippet({ code }: { code: string }) {
 
 const cards = [
   {
-    title: 'Installation and Usage',
-    description: 'Start integrating AgentDNA quickly.',
+    title: 'Installation',
+    description: 'Install AgentDNA with ease!',
     href: '/install',
   },
   {
     title: 'AgentDNA Dashboard',
-    description: 'Manage agents, policies, and contexts.',
+    description: 'Manage agents, policies, and contexts',
     href: 'https://dashboard.agentdna.io/',
   },
   {
     title: 'Examples',
-    description: 'See working samples and starter kits.',
+    description: 'See working samples and starter kits',
     href: '/agents',
   },
   {
@@ -51,12 +51,13 @@ const cards = [
     href: '/tutorials',
   },
   {
-    title: 'Access the BETA',
+    title: 'Join Beta',
+    description: "Join AgentDNA Beta program and get 100 credits instantly",
     href: 'https://agentdna.io/beta',
   },
   {
     title: 'Integration Guides',
-    description: 'Coming Soon',
+    description: 'Coming Soon...',
     href: '#integrations',
   },
 ]
