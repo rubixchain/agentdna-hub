@@ -1,6 +1,33 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import logo from './assets/a4d2293fc03eb10393506a75b7c4bd9ad839d7ba-efzz4AxP.png'
+import hljs from 'highlight.js/lib/core';
+import python from 'highlight.js/lib/languages/python';
+import 'highlight.js/styles/github-dark.css';
+import { useEffect, useRef } from "react";
+import "highlight.js/styles/atom-one-dark.css";
+
+hljs.registerLanguage("python", python);
+
+function CodeSnippet({ code }: { code: string }) {
+  const codeRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (codeRef.current) {
+      hljs.highlightElement(codeRef.current);
+    }
+  }, []);
+
+  return (
+    <pre className="code-body">
+      <code ref={codeRef} className="language-python">
+        {code}
+      </code>
+    </pre>
+  );
+}
+
+
 
 const cards = [
   {
@@ -149,9 +176,8 @@ uv add agent-dna`
             <span className="dot yellow" />
             <span className="dot green" />
           </div>
-          <div className="code-body">
-            {snippet.split('\n').map((line, i) => <code key={i}>{line}</code>)}
-          </div>
+          <CodeSnippet code={snippet} />
+
           <button className="copy-btn" onClick={handleCopy}>Copy</button>
         </div>
       </div>
@@ -166,13 +192,12 @@ uv add agent-dna`
 }
 
 function TutorialCard2() {
-  const snippet = `from agentdna import AgentDNA`
+  const snippet = `from agentdna import AgentDNA`;
 
-  const handleCopy = () => navigator.clipboard.writeText(snippet)
+  const handleCopy = () => navigator.clipboard.writeText(snippet);
 
   return (
     <section className="section-card secure-block">
-
       <div className="secure-code">
         <div className="code-window">
           <div className="code-dot-row">
@@ -181,9 +206,7 @@ function TutorialCard2() {
             <span className="dot green" />
           </div>
 
-          <div className="code-body">
-            <code>{snippet}</code>
-          </div>
+          <CodeSnippet code={snippet} />
 
           <button className="copy-btn" onClick={handleCopy}>Copy</button>
         </div>
@@ -192,10 +215,12 @@ function TutorialCard2() {
       <div className="secure-text">
         <h3 className="secure-title">2. Import the SDK</h3>
         <p className="hero-sub">Import AgentDNA into your Python environment.</p>
-        <p className="hero-sub">Once installed and imported, you are ready to initialize Host and Remote agents</p>
+        <p className="hero-sub">
+          Once installed and imported, you are ready to initialize Host and Remote agents.
+        </p>
       </div>
     </section>
-  )
+  );
 }
 
 function TutorialCard3() {
@@ -218,9 +243,8 @@ function TutorialCard3() {
             <span className="dot green" />
           </div>
 
-          <div className="code-body">
-            {snippet.split('\n').map((line, i) => <code key={i}>{line}</code>)}
-          </div>
+          <CodeSnippet code={snippet} />
+
 
           <button className="copy-btn" onClick={handleCopy}>Copy</button>
         </div>
@@ -254,9 +278,7 @@ function TutorialCard4() {
             <span className="dot green" />
           </div>
 
-          <div className="code-body">
-            {snippet.split('\n').map((line, i) => <code key={i}>{line}</code>)}
-          </div>
+          <CodeSnippet code={snippet} />
 
           <button className="copy-btn" onClick={handleCopy}>Copy</button>
         </div>
@@ -288,9 +310,7 @@ function TutorialCard5() {
             <span className="dot green" />
           </div>
 
-          <div className="code-body">
-            {snippet.split('\n').map((line, i) => <code key={i}>{line}</code>)}
-          </div>
+          <CodeSnippet code={snippet} />
 
           <button className="copy-btn" onClick={handleCopy}>Copy</button>
         </div>
@@ -335,9 +355,7 @@ is_host_block_valid =  host_query_verification_info["host_ok"]
             <span className="dot green" />
           </div>
 
-          <div className="code-body">
-            {snippet.split('\n').map((line, i) => <code key={i}>{line}</code>)}
-          </div>
+          <CodeSnippet code={snippet} />
 
           <button className="copy-btn" onClick={handleCopy}>Copy</button>
         </div>
@@ -364,17 +382,8 @@ original_message = host_query_verification_info["original_message"]
 host_block =  host_query_verification_info["host_block"]
 is_host_block_valid =  host_query_verification_info["host_ok"]
 
+reply = "Response from the AI model"
 
-
-
-
- reply = "<Response from the AI model>"
-
-
-
-
-
-  
   remote_agent_response = remote.build(
   original_message=original_message,
   response=reply,
@@ -394,9 +403,7 @@ is_host_block_valid =  host_query_verification_info["host_ok"]
             <span className="dot green" />
           </div>
 
-          <div className="code-body">
-            {snippet.split('\n').map((line, i) => <code key={i}>{line}</code>)}
-          </div>
+          <CodeSnippet code={snippet} />
 
           <button className="copy-btn" onClick={handleCopy}>Copy</button>
         </div>
@@ -419,9 +426,6 @@ function TutorialCard8() {
   const snippet = `
   response_from_remote_agent = {...}
 
-
-
-
   verification_info = host.handle(
   resp_parts=response_from_remote_agent,
   original_task=<Query from host>,
@@ -441,9 +445,7 @@ function TutorialCard8() {
             <span className="dot green" />
           </div>
 
-          <div className="code-body">
-            {snippet.split('\n').map((line, i) => <code key={i}>{line}</code>)}
-          </div>
+          <CodeSnippet code={snippet} />
 
           <button className="copy-btn" onClick={handleCopy}>Copy</button>
         </div>
@@ -1011,7 +1013,7 @@ function TutorialsPage() {
       <TutorialCard6 />
       <TutorialCard7 />
       <TutorialCard8 />
-     
+
       <div className="install-link-center">
         <Link className="cta" to="https://github.com/rubixchain/agentdna/tree/main">
           View on Github

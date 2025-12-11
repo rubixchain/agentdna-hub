@@ -55,6 +55,39 @@ body::before {
   flex: 1; /* pushes footer down */
 }
 
+.code-body {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.code-window pre {
+  margin: 0;
+  background: transparent;
+}
+
+.hljs {
+  font-size: 15px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.3) !important; /* nice faded dark */
+}
+
+
+
+.code-window pre {
+  margin: 0;
+  background: none;
+}
+
+.hljs {
+  background: rgba(0,0,0,0.25) !important; 
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
 .tutorial-intro {
   margin: 0 0 18px;
   color: var(--muted);
