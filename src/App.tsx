@@ -1,5 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import './App.css'
+import logo from './assets/a4d2293fc03eb10393506a75b7c4bd9ad839d7ba-efzz4AxP.png'
 
 const cards = [
   {
@@ -23,6 +24,10 @@ const cards = [
     href: '#tutorials',
   },
   {
+  title: 'Access the BETA',
+  href: '/beta',
+},
+  {
     title: 'Integration Guides',
     description: 'Coming Soon',
     href: '#integrations',
@@ -40,7 +45,6 @@ function HubPage() {
       <section className="hero">
         <h1 className="hero-title">AgentDNA Hub</h1>
         <p className="hero-sub">Explore everything you need to launch with confidence.</p>
-       
       </section>
 
       <section className="hub">
@@ -79,6 +83,13 @@ function HubPage() {
               <p>{cards[4].description}</p>
             </div>
           </a>
+
+          <a className="card card-link" href={cards[5].href}>
+            <div className="card-body">
+              <h3>{cards[5].title}</h3>
+              <p>{cards[5].description}</p>
+            </div>
+          </a>
         </div>
       </section>
     </main>
@@ -101,8 +112,8 @@ function InstallPage() {
     
       </section>  
       <SecureCard1 />
-      <SecureCard2 />
-      <SecureCard3/>
+      {/* <SecureCard2 />
+      <SecureCard3/> */}
       <section className="section-card two-col highlight">
         <div>
           <h2 className="section-title">Secure, verifiable agents out of the box</h2>
@@ -113,7 +124,7 @@ function InstallPage() {
             <li>Compatible with Google A2A, ADK, Crew, and LangGraph</li>
           </ul>
         </div>
-        <div>
+        {/* <div>
           <h2 className="section-title">Get started fast</h2>
           <div className="code-block elevated">
             <code># Installation via pip</code>
@@ -122,7 +133,7 @@ function InstallPage() {
             <code># Installation via uv</code>
             <code>uv add agent-dna</code>
           </div>
-        </div>
+        </div> */}
       </section>
 
       <section className="section-card highlight">
@@ -156,14 +167,13 @@ function InstallPage() {
 
 function AgentsPage() {
   return (
-    <main className="content">
-    <section className="section-card install-header">
-      <h1 className="hero-title">Agents</h1>
+    <main>
+    <section className="hero">
+      <h1 className="hero-title">Agent Example</h1>
       <p className="hero-sub">Browse example agents and pick a starting point.</p>
     </section>
   
     <section className="section-card highlight">
-      <h2 className="section-title">Agents List</h2>
       <div className="agent-grid">
         {agents.map((agent) => (
           <Link
@@ -182,53 +192,53 @@ function AgentsPage() {
   )
 }
 
-function SecureCard3() {
-  const snippet = `outbound = dna.build(
-    original_message="Are you free tomorrow?",
-    state={"task_id": tid, "context_id": cid}
-)
+// function SecureCard3() {
+//   const snippet = `outbound = dna.build(
+//     original_message="Are you free tomorrow?",
+//     state={"task_id": tid, "context_id": cid}
+// )
 
-result = await self.dna.handle(
-    resp_parts=resp_parts,
-    original_task=task,
-    remote_name=agent_name,
-)`
+// result = await self.dna.handle(
+//     resp_parts=resp_parts,
+//     original_task=task,
+//     remote_name=agent_name,
+// )`
 
-  const handleCopy = () => {
-    navigator.clipboard?.writeText(snippet)
-  }
+//   const handleCopy = () => {
+//     navigator.clipboard?.writeText(snippet)
+//   }
 
-  return (
-    <section className="section-card secure-block">
-      <div className="secure-code">
-        <div className="code-window">
-          <div className="code-dot-row">
-            <span className="dot red" />
-            <span className="dot yellow" />
-            <span className="dot green" />
-          </div>
-          <div className="code-body">
-            {snippet.split('\n').map((line, idx) => (
-              <code key={idx}>{line || ' '}</code>
-            ))}
-          </div>
-          <button className="copy-btn" onClick={handleCopy} type="button">
-            Copy
-          </button>
-        </div>
-      </div>
-      <div className="secure-text">
-        <div className="icon-circle">🔒</div>
-        <p className="mini-heading">Secure</p>
-        <h3 className="secure-title">Enforce identity, integrity, and governance.</h3>
-        <p className="hero-sub">
-          Secure every outbound and inbound behavior by signing, verifying, and logging critical
-          agent interactions.
-        </p>
-      </div>
-    </section>
-  )
-}
+//   return (
+//     <section className="section-card secure-block">
+//       <div className="secure-code">
+//         <div className="code-window">
+//           <div className="code-dot-row">
+//             <span className="dot red" />
+//             <span className="dot yellow" />
+//             <span className="dot green" />
+//           </div>
+//           <div className="code-body">
+//             {snippet.split('\n').map((line, idx) => (
+//               <code key={idx}>{line || ' '}</code>
+//             ))}
+//           </div>
+//           <button className="copy-btn" onClick={handleCopy} type="button">
+//             Copy
+//           </button>
+//         </div>
+//       </div>
+//       <div className="secure-text">
+//         <div className="icon-circle">🔒</div>
+//         <p className="mini-heading">Secure</p>
+//         <h3 className="secure-title">Enforce identity, integrity, and governance.</h3>
+//         <p className="hero-sub">
+//           Secure every outbound and inbound behavior by signing, verifying, and logging critical
+//           agent interactions.
+//         </p>
+//       </div>
+//     </section>
+//   )
+// }
 
 function SecureCard1() {
   const snippet = 
@@ -276,49 +286,49 @@ function SecureCard1() {
   )
 }
 
-function SecureCard2() {
-  const snippet = `dna = AgentDNA(
-    alias="<agent alias>",
-    role="<host/remote>"
-    )`
+// function SecureCard2() {
+//   const snippet = `dna = AgentDNA(
+//     alias="<agent alias>",
+//     role="<host/remote>"
+//     )`
 
 
-  const handleCopy = () => {
-    navigator.clipboard?.writeText(snippet)
-  }
+//   const handleCopy = () => {
+//     navigator.clipboard?.writeText(snippet)
+//   }
 
-  return (
-    <section className="section-card secure-block">
-      <div className="secure-code">
-        <div className="code-window">
-          <div className="code-dot-row">
-            <span className="dot red" />
-            <span className="dot yellow" />
-            <span className="dot green" />
-          </div>
-          <div className="code-body">
-            {snippet.split('\n').map((line, idx) => (
-              <code key={idx}>{line || ' '}</code>
-            ))}
-          </div>
-          <button className="copy-btn" onClick={handleCopy} type="button">
-            Copy
-          </button>
-        </div>
-      </div>
-      <div className="secure-text">
-        <div className="icon-circle">🔒</div>
-        <p className="mini-heading">Secure</p>
-        <h3 className="secure-title">Initialize
-        </h3>
-        <p className="hero-sub">
-        Instantiate your agent’s DNA - bootstrap identity and context. /n
-       Import agentdna from AgentDNA
-        </p>
-      </div>
-    </section>
-  )
-}
+//   return (
+//     <section className="section-card secure-block">
+//       <div className="secure-code">
+//         <div className="code-window">
+//           <div className="code-dot-row">
+//             <span className="dot red" />
+//             <span className="dot yellow" />
+//             <span className="dot green" />
+//           </div>
+//           <div className="code-body">
+//             {snippet.split('\n').map((line, idx) => (
+//               <code key={idx}>{line || ' '}</code>
+//             ))}
+//           </div>
+//           <button className="copy-btn" onClick={handleCopy} type="button">
+//             Copy
+//           </button>
+//         </div>
+//       </div>
+//       <div className="secure-text">
+//         <div className="icon-circle">🔒</div>
+//         <p className="mini-heading">Secure</p>
+//         <h3 className="secure-title">Initialize
+//         </h3>
+//         <p className="hero-sub">
+//         Instantiate your agent’s DNA - bootstrap identity and context. /n
+//        Import agentdna from AgentDNA
+//         </p>
+//       </div>
+//     </section>
+//   )
+// }
 
 function JiraPage() {
   return (
@@ -726,10 +736,13 @@ function App() {
       <div className="page">
         <header className="nav">
           <div className="brand">
-            <div className="brand-mark">AD</div>
-            <span className="brand-name">AgentDNA</span>
+            <img 
+                src={logo} 
+                alt="AgentDNA Logo" 
+                className="brand-logo"
+              />
           </div>
-          <div className="nav-actions">
+          {/* <div className="nav-actions">
             <Link className="nav-link" to="/">
               Hub
             </Link>
@@ -742,7 +755,7 @@ function App() {
             <Link className="outline" to="/install">
               Get Started
             </Link>
-          </div>
+          </div> */}
         </header>
 
         <Routes>
