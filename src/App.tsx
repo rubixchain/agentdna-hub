@@ -295,6 +295,7 @@ function TutorialCard4() {
 function TutorialCard5() {
   const snippet = `hostEnvelope = host.build(
   original_message="Query from host"
+  state={"task_id": <Task ID>, "context_id": <Context ID>} #Payload for A2A protocol
 )`
 
   const handleCopy = () => navigator.clipboard.writeText(snippet)
@@ -334,12 +335,14 @@ function TutorialCard5() {
 function TutorialCard6() {
   const snippet = `host_query_verification_info = remote.handle(
   raw_text=<Message payload from host>,
-  remote_name="Remote"
+  verify_mode="light" # Verification mode of host message
 )
 
+# Original message from host
 original_message = host_query_verification_info["original_message"]
+
+# Meta information about the host's query
 host_block =  host_query_verification_info["host_block"]
-is_host_block_valid =  host_query_verification_info["host_ok"]
 `
 
   const handleCopy = () => navigator.clipboard.writeText(snippet)
@@ -378,15 +381,11 @@ is_host_block_valid =  host_query_verification_info["host_ok"]
 function TutorialCard7() {
 
   const snippet = `
-original_message = host_query_verification_info["original_message"]
-host_block =  host_query_verification_info["host_block"]
-is_host_block_valid =  host_query_verification_info["host_ok"]
+remote_response = "Response from the Remote side (AI model/MCP server)"
 
-reply = "Response from the AI model"
-
-  remote_agent_response = remote.build(
-  original_message=original_message,
-  response=reply,
+remote_envelope = remote.build(
+  original_message=<Message recieved from the host>,
+  response=remote_response,
   host_block=host_block
 )`
 
@@ -424,12 +423,10 @@ reply = "Response from the AI model"
 function TutorialCard8() {
 
   const snippet = `
-  response_from_remote_agent = {...}
-
-  verification_info = host.handle(
-  resp_parts=response_from_remote_agent,
+verification_info = host.handle(
+  resp_parts=<Response info from Remote side>,
   original_task=<Query from host>,
-  remote_name=<Counter party Agent Info>
+  remote_name=<Counterparty name>
 )`
 
   const handleCopy = () => navigator.clipboard.writeText(snippet)
