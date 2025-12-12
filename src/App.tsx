@@ -529,43 +529,7 @@ function JiraPage() {
           </div>
         </section>
 
-        {/* Features Grid */}
-        {/* <section className="section-card">
-          <h2 className="section-title">Key Features</h2>
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">🔐</div>
-              <h3>Secure Automation</h3>
-              <p>Automated Jira workflows using MCP tools with built-in security</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">✍️</div>
-              <h3>Signed Messages</h3>
-              <p>End-to-end signed messages via AgentDNA for complete authenticity</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">✅</div>
-              <h3>Trust Verification</h3>
-              <p>Automatic verification on every server to client round-trip</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">📜</div>
-              <h3>Audit Trail</h3>
-              <p>Complete audit logs for every Jira tool execution</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🖥️</div>
-              <h3>Streamlit UI</h3>
-              <p>Interactive interface with conversation history and one-click viewer</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🤖</div>
-              <h3>AI-Powered</h3>
-              <p>Uses Gemini 2.5 Flash for natural language interpretation</p>
-            </div>
-          </div>
-        </section> */}
-
+      
         {/* Components Section */}
         <section className="section-card">
           <h2 className="section-title">Architecture Components</h2>
@@ -921,6 +885,20 @@ function TutorialsPage() {
           AgentDNA - A Complete Step-by-Step Guide
         </p>
       </section>
+
+  <section className="section-card highlight video-section">
+    <h2>LifeCycle Of Agents</h2>
+  <div className="video-wrapper">
+    <iframe
+  src="https://www.youtube.com/embed/Tud9HLTk8hg"
+      title="Introduction to AgentDNA"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  </div>
+</section>
+
 
 
       <section className="section-card highlight">
