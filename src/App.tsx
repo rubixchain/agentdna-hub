@@ -13,9 +13,7 @@ import { HubPage } from "./components/hubpage";
 import { InstallPage } from "./components/installpage";
 import { TutorialsPage } from "./components/tutorialspage";
 import { AgentsPage } from "./components/agentspage";
-
-
-
+import { MCPGoogleSheetsPage } from "./gsheet.agent";
 
 
 function App() {
@@ -49,6 +47,7 @@ function App() {
           <Route path="/agents/jira" element={<JiraPage/>} />
           <Route path="/agents/multi-agent-system" element={<MultiAgentSystemPage />} />
           <Route path="/agents/github" element={<GithubAgentPage />} />
+          <Route path="/agents/gsheet" element={<MCPGoogleSheetsPage />} />
           <Route path="/tutorials" element={<TutorialsPage />} />
         </Routes>
       </div>

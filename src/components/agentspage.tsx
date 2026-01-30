@@ -17,6 +17,12 @@ const agents = [
     description:
       "An agent that coordinates with Github MCP to create Issues and Pull Requests",
   },
+  {
+    title: "Google Sheets Agent",
+    path: "/agents/gsheet",
+    description:
+      "An agent that coordinates with Github MCP to create Issues and Pull Requests",
+  },
 ];
 
 export function AgentsPage() {
@@ -29,26 +35,14 @@ export function AgentsPage() {
 
       <section className="hub">
         <div className="hub-grid">
-          <a className="card card-link" href={agents[0].path}>
-            <div className="card-body">
-              <h3>{agents[0].title}</h3>
-              <p>{agents[0].description}</p>
-            </div>
-          </a>
-
-          <a className="card card-link" href={agents[1].path}>
-            <div className="card-body">
-              <h3>{agents[1].title}</h3>
-              <p>{agents[1].description}</p>
-            </div>
-          </a>
-
-              <a className="card card-link" href={agents[2].path}>
-            <div className="card-body">
-              <h3>{agents[2].title}</h3>
-              <p>{agents[2].description}</p>
-            </div>
-          </a>
+          {agents.map((agent) => (
+            <a key={agent.path} className="card card-link" href={agent.path}>
+              <div className="card-body">
+                <h3>{agent.title}</h3>
+                <p>{agent.description}</p>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
     </main>
