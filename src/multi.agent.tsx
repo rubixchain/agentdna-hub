@@ -1,4 +1,4 @@
-export function PickleballAgentPage() {
+export function MultiAgentSystemPage() {
   return (
     <div className="page">
       <main className="content">
@@ -257,7 +257,7 @@ export function PickleballAgentPage() {
         {/* CTA */}
         <div className="cta-container">
           <a
-            href="https://github.com/rubixchain/agentdna/tree/main/examples/pickleball-multi-agent-system"
+            href="https://github.com/rubixchain/agentdna/tree/main/examples/multi_agent_system"
             className="cta"
           >
             View on GitHub

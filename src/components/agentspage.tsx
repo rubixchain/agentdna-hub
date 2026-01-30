@@ -1,9 +1,9 @@
 const agents = [
   {
-    title: "PickleBall Agent",
-    path: "/agents/pickleball",
+    title: "Multi Agent System",
+    path: "/agents/multi-agent-system",
     description:
-      "A multi-agent application demonstrating how to orchestrate conversations between different agents to schedule pickleball games with friends.",
+      "A multi-agent application demonstrating how to orchestrate conversations between different Agents",
   },
   {
     title: "Jira Agent",

@@ -8,7 +8,7 @@ import { useEffect, useRef } from "react";
 import "highlight.js/styles/atom-one-dark.css";
 import { GithubAgentPage } from "./github.agent";
 import { JiraPage } from "./Jira.agent";
-import { PickleballAgentPage } from "./pickleball.agent";
+import { MultiAgentSystemPage } from "./multi.agent";
 import { HubPage } from "./components/hubpage";
 import { InstallPage } from "./components/installpage";
 import { TutorialsPage } from "./components/tutorialspage";
@@ -47,7 +47,7 @@ function App() {
           <Route path="/install" element={<InstallPage/>} />
           <Route path="/agents" element={<AgentsPage/>} />
           <Route path="/agents/jira" element={<JiraPage/>} />
-          <Route path="/agents/pickleball" element={<PickleballAgentPage />} />
+          <Route path="/agents/multi-agent-system" element={<MultiAgentSystemPage />} />
           <Route path="/agents/github" element={<GithubAgentPage />} />
           <Route path="/tutorials" element={<TutorialsPage />} />
         </Routes>
