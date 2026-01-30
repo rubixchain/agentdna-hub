@@ -922,3 +922,139 @@ button {
     flex-direction: column;
   }
 }
+
+
+.agents-section {
+  padding: 20px;
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Base card */
+.agent-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-radius: 12px;
+  background: #0f1115;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover state = “this is clickable” */
+.agent-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(100, 180, 255, 0.6);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* Title area */
+.agent-card-header {
+  margin-bottom: 8px;
+}
+
+.agent-card-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.4px;
+}
+
+/* Description area */
+.agent-card-body {
+  flex: 1;
+}
+
+.agent-card-description {
+  margin: 0;.agents-section {
+  padding: 20px;
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Base card */
+.agent-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-radius: 12px;
+  background: #0f1115;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover state = “this is clickable” */
+.agent-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(100, 180, 255, 0.6);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* Title area */
+.agent-card-header {
+  margin-bottom: 8px;
+}
+
+.agent-card-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.4px;
+}
+
+/* Description area */
+.agent-card-body {
+  flex: 1;
+}
+
+.agent-card-description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #9aa4b2;
+}
+
+/* Optional accent stripe */
+.agent-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  opacity: 0.7;
+}
+
+  font-size: 14px;
+  line-height: 1.6;
+  color: #9aa4b2;
+}
+
+/* Optional accent stripe */
+.agent-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  opacity: 0.7;
+}

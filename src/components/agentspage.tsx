@@ -1,0 +1,56 @@
+const agents = [
+  {
+    title: "PickleBall Agent",
+    path: "/agents/pickleball",
+    description:
+      "A multi-agent application demonstrating how to orchestrate conversations between different agents to schedule pickleball games with friends.",
+  },
+  {
+    title: "Jira Agent",
+    path: "/agents/jira",
+    description:
+      "An agent that integrates with Jira to manage tasks and projects.",
+  },
+  {
+    title: "Github Agent",
+    path: "/agents/github",
+    description:
+      "An Agent that integrates with Github and track the activities",
+  },
+];
+
+export function AgentsPage() {
+  return (
+    <main>
+      <section className="hero">
+        <h1 className="hero-title">Agent Registry</h1>
+        <p className="hero-sub">Browse agents and pick a starting point.</p>
+      </section>
+
+      <section className="hub">
+        <div className="hub-grid">
+          <a className="card card-link" href={agents[0].path}>
+            <div className="card-body">
+              <h3>{agents[0].title}</h3>
+              <p>{agents[0].description}</p>
+            </div>
+          </a>
+
+          <a className="card card-link" href={agents[1].path}>
+            <div className="card-body">
+              <h3>{agents[1].title}</h3>
+              <p>{agents[1].description}</p>
+            </div>
+          </a>
+
+              <a className="card card-link" href={agents[2].path}>
+            <div className="card-body">
+              <h3>{agents[2].title}</h3>
+              <p>{agents[2].description}</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+  );
+}
