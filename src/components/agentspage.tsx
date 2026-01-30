@@ -15,7 +15,7 @@ const agents = [
     title: "Github Agent",
     path: "/agents/github",
     description:
-      "An Agent that integrates with Github and track the activities",
+      "An agent that coordinates with Github MCP to create Issues and Pull Requests",
   },
 ];
 
