@@ -23,6 +23,13 @@ const agents = [
     description:
       "An agent that coordinates with Github MCP to create Issues and Pull Requests",
   },
+  {
+    title: "Yahoo Finance Agent",
+    path: "/agents/yfinance",
+    description:
+      " An agent that coordinates with Yahoo MCP using the agentdna package.",
+  },
+
 ];
 
 export function AgentsPage() {

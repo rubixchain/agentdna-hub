@@ -6,14 +6,15 @@ import python from "highlight.js/lib/languages/python";
 import "highlight.js/styles/github-dark.css";
 import { useEffect, useRef } from "react";
 import "highlight.js/styles/atom-one-dark.css";
-import { GithubAgentPage } from "./github.agent";
-import { JiraPage } from "./Jira.agent";
-import { MultiAgentSystemPage } from "./multi.agent";
+import { GithubAgentPage } from "./agents/github.agent";
+import { JiraPage } from "./agents/Jira.agent";
+import { MultiAgentSystemPage } from "./agents/multi.agent";
 import { HubPage } from "./components/hubpage";
 import { InstallPage } from "./components/installpage";
 import { TutorialsPage } from "./components/tutorialspage";
 import { AgentsPage } from "./components/agentspage";
-import { MCPGoogleSheetsPage } from "./gsheet.agent";
+import { MCPGoogleSheetsPage } from "./agents/gsheet.agent";
+import { MCPYahooFinancePage } from "./agents/yahoo.agent";
 
 
 function App() {
@@ -49,6 +50,8 @@ function App() {
           <Route path="/agents/github" element={<GithubAgentPage />} />
           <Route path="/agents/gsheet" element={<MCPGoogleSheetsPage />} />
           <Route path="/tutorials" element={<TutorialsPage />} />
+          <Route path="/agents/yfinance" element={<MCPYahooFinancePage/>} />
+
         </Routes>
       </div>
       <footer className="footer">© 2026 AgentDNA. All rights reserved.</footer>
