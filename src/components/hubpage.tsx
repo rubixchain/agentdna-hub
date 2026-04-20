@@ -61,7 +61,7 @@ const CARDS = [
   {
     title: "Integration Guides",
     description: "Connect AgentDNA to your existing stack with MCP and REST APIs.",
-    label: "Connectivity",
+    label: "Coming Soon",
     icon: Blocks,
     type: "standard" as const,
     href: "#integrations",
@@ -209,7 +209,7 @@ export function HubPage() {
         >
         
 
-          <h1 className="font-headline text-10xl md:text-8xl lg:text-20xl font-bold tracking-tighter leading-[0.95] max-w-10xl">
+          <h1 className="font-headline text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.95] max-w-4xl">
             AgentDNA{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary-dim to-primary/50">
               HUB
